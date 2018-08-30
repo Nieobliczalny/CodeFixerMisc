@@ -34,3 +34,11 @@ cd ..
 6. Run all tests:
 (deprecated, does not include integration tests): python3 -m unittest discover -s /mnt/c/Users/Krystian/Desktop/tmp/codefixer/code -p 'test*.py'
 (recommended) ./runAllTests.sh
+
+7. Run buildTrainDB script
+cd ~/codefixer/code
+./buildTrainDB.sh <option>
+# where option can be:
+# c, clean for clean analysis
+# i, incremental for incremental analysis
+# if no option is given, clean analysis is assumed

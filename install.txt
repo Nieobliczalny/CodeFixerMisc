@@ -1,0 +1,36 @@
+Installing:
+1. Install CodeChecker:
+sudo apt install clang-3.9 build-essential curl doxygen gcc-multilib git python-virtualenv python-dev thrift-compiler
+git clone https://github.com/Ericsson/CodeChecker.git --depth 1 ~/codechecker
+cd ~/codechecker
+make venv
+source $PWD/venv/bin/activate
+make package
+export PATH="$PWD/build/CodeChecker/bin:$PATH"
+
+2. Install git-python
+sudo apt install python3-pip
+pip3 install gitpython
+
+3. Checkout codefixer wrapper repo
+cd ~
+mkdir -p codefixer
+cd codefixer
+git clone http://80.211.136.86:3000/Nieobliczalny/CodeFixerWrapper.git --depth 1 .
+cd ..
+
+4. Setup codefixer repo in code directory
+mkdir -p code
+cd code
+git clone http://80.211.136.86:3000/Nieobliczalny/CodeFixer.git --depth 1 .
+cd ..
+
+5. Setup codefixer testdata repo in testdata directory
+mkdir -p testdata
+cd testdata
+git clone http://80.211.136.86:3000/Nieobliczalny/CodeFixerTest.git --depth 1 .
+cd ..
+
+6. Run all tests:
+(deprecated, does not include integration tests): python3 -m unittest discover -s /mnt/c/Users/Krystian/Desktop/tmp/codefixer/code -p 'test*.py'
+(recommended) ./runAllTests.sh

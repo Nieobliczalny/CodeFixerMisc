@@ -1,0 +1,25 @@
+Known limits:
+Only last of bug path is considered
+Renamed / Removed file from repository is ignored by CodeChecker (tracking renamed file and its bugs is costly and low prio for now)
+
+#TODO:
+[1] buildTestDB not working - create running script cleaning everything (see [3])
+[2] make wrapper script like setup-repo
+[3] make script for building db accept only selected commits (analyze them and one version before as base
+[3] for traindbbuilder start clean codechecker server (create wrapper script running server in one thread, builder on other one)
+[3] investigate possible open-source projects for train db(s) creation
+[4] use open-source projects for train db(s) creation
+[4] investigate encapsulation possibilities in python
+[5] extract tests to separate folder for easier management
+[5] add possibility to enter codechecker custom options (like --ctu-all) in config
+[6] add bug path events!
+[6] refactor tests with clean code principles
+
+Tests:
+<nothing yet>
+
+Info:
+master - for unit tests
+trainDbTest - for testing buildTestDB.py manually
+trainDbScriptTest - for testing buildTestDB.py by integration tests
+trainDbScriptIncrementalTest - for testing buildTestDB.py by integration tests

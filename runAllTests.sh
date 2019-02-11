@@ -8,7 +8,7 @@ rm -rf ~/.codechecker 2&> /dev/null
 rm -rf /tmp/cctmp 2&> /dev/null
 CodeChecker server > /dev/null &
 CC_PID=$!
-cd ../code
+cd ../codefixer
 rm -f config.ini
 ln -s configTest.ini config.ini
 sleep 10s

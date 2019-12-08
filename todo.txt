@@ -21,3 +21,10 @@ master - for unit tests
 trainDbTest - for testing buildTestDB.py manually
 trainDbScriptTest - for testing buildTestDB.py by integration tests
 trainDbScriptIncrementalTest - for testing buildTestDB.py by integration tests
+
+Flex:
+flex --outfile=CxxLexer.c CxxLexer.l
+g++ -Wall -Wextra CxxLexer.c -o CxxLexer
+
+Clean:
+rm -f CxxLexer CxxLexer.c

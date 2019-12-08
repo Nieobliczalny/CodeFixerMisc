@@ -42,3 +42,8 @@ cd ~/codefixer/code
 # c, clean for clean analysis
 # i, incremental for incremental analysis
 # if no option is given, clean analysis is assumed
+
+Other (keras):
+pip3 install tensorflow
+pip3 install h5py
+pip3 install keras

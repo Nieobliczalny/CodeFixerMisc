@@ -34,4 +34,13 @@ echo Executing script tests - Incremental case
 python3 intTestBuildTrainDbIncremental.py
 echo Script tests finished
 kill -15 $CC_PID
+CodeChecker server -w /tmp/cctmp > /dev/null &
+CC_PID=$!
+rm -f config.ini
+ln -s configTrainTest.ini config.ini
+sleep 10s
+echo Executing script tests - Model data
+python3 intTestBuildTrainDbModelData.py
+echo Script tests finished
+kill -15 $CC_PID
 cd ../

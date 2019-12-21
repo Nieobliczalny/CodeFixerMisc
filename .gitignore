@@ -4,3 +4,14 @@ testdata
 testdata/*
 .vscode
 .vscode/*
+tmp/*
+MGR/*
+TestingData/*
+TrainingData/*
+TrainingData_DivideByZero/*
+cc/*
+*.sqlite
+env/*
+env2/*
+env3/*
+cloud/*

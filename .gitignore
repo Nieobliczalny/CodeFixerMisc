@@ -15,3 +15,5 @@ env/*
 env2/*
 env3/*
 cloud/*
+Results/*
+old_logs/*

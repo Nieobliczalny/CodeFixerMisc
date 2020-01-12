@@ -1,6 +1,7 @@
 Known limits:
 Only last of bug path is considered
 Renamed / Removed file from repository is ignored by CodeChecker (tracking renamed file and its bugs is costly and low prio for now)
+TODO: Replace \r\n with \n in TestingData
 
 #TODO:
 [2] make wrapper script like setup-repo

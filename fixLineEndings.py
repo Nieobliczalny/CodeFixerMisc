@@ -15,7 +15,7 @@ if __name__ == "__main__":
         print("Missing file argument")
         for i in range(1,5001):
             #subprocess.call("python3 fixLineEndings.py ../TrainingData/main{0}.cpp".format(i), shell=True)
-            subprocess.call("python3 fixDeadStore.py main{0}.cpp".format(i), shell=True)
+            subprocess.call("python3 fixLineEndings.py ./TestingData/main{0}.cpp".format(i), shell=True)
             print(i)
     else:
         main(sys.argv[1])

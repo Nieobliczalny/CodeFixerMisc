@@ -1,7 +1,6 @@
 Known limits:
 Only last of bug path is considered
 Renamed / Removed file from repository is ignored by CodeChecker (tracking renamed file and its bugs is costly and low prio for now)
-TODO: Replace \r\n with \n in TestingData
 
 #TODO:
 [2] make wrapper script like setup-repo
@@ -29,3 +28,24 @@ g++ -Wall -Wextra CxxLexer.c -o CxxLexer
 
 Clean:
 rm -f CxxLexer CxxLexer.c
+
+Verifying models:
+1. Load all bugs for selected checker
+2. Group bugs by file name and write them to DB
+3. Run threadpool with 24 units and queue
+4. Each file has its own thread
+5. Thread for each file:
+5.1. Load model
+5.2. For each bug:
+5.2.1. Extract bug code (input)
+5.2.2. Prepare expected output (expected_output)
+5.2.3. Generate fix based on model and save file (output)
+5.2.4. Run CC analysis and check if compilation was successful (compilation_ok)
+5.2.5. If compilation OK, check if bug fixed (bug_fixed)
+5.2.6. Check if output == expected_output (is_expected)
+5.2.7. Determine % of correct tokens (tokens_correct, all_tokens)
+5.2.8. Write analysis output in file
+5.2.9. Checkout file
+5.2.10. Save information about bug & file in DB
+5.3. Close thread
+6. If all OK, join all output files into excel file (checker = sheet)

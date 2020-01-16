@@ -1,0 +1,8 @@
+source ~/codechecker/venv/bin/activate
+export PATH=$PATH:/home/ekryjoz/codechecker/build/CodeChecker/bin
+
+
+
+
+
+git config --global alias.lg "log --color --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit"
